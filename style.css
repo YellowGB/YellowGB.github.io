@@ -1,0 +1,370 @@
+:root{
+	--bleu: #00ebdd;
+	--shareTech: "Share Tech";
+}
+
+/* https://fonts.googleapis.com/css?family=Share+Tech */
+@font-face {
+  font-family: 'Share Tech';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/sharetech/v12/7cHtv4Uyi5K0OeZ7bohU8H0JmA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@keyframes pulse-animation {
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+@keyframes csharp {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 95%;
+	}
+}
+@keyframes java {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 70%;
+	}
+}
+@keyframes python {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 72%;
+	}
+}
+@keyframes vb {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 86%;
+	}
+}
+@keyframes html {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 90%;
+	}
+}
+@keyframes js {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 85%;
+	}
+}
+@keyframes algo {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 88%;
+	}
+}
+@keyframes bar-fill {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 100%;
+	}
+}
+
+@keyframes cv {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+@keyframes about {
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+body{
+	background-color: black;
+}
+h1{
+	font-family: var(--shareTech);
+	animation: pulse-animation 2s infinite;
+	color: var(--bleu);
+}
+
+.menu{
+	margin-top: 2%;
+	margin-left: 5%;
+	width: 79%;
+	border-radius: 8px;
+	font-family: var(--shareTech);
+	color: var(--bleu);
+	list-style: none;
+	text-decoration: none;
+	overflow: hidden;
+	display: inline-block;
+	animation: cv 5s;
+}
+.item{
+	border-top: 1px solid var(--bleu);
+	overflow: hidden;
+}
+.btn{
+	display: block;
+	padding: 16px 20px;
+	background: var(--bleu);
+	color: black;
+	position: relative;
+	text-decoration: none;
+	font-size: 20px;
+}
+.btn::before{
+	/* encoche quand menu déroulé */
+	content: '';
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	background: var(--bleu);
+	left: 20px;
+	bottom: -7px;
+	transform: rotate(45deg);
+}
+.btn i{
+	margin-right: 10px;
+}
+.smenu{
+	/* par défaut, le sous-menu a une taille maximale de 0,
+	avec le overflow hidden il est donc caché */
+	background: #333;
+	overflow: hidden;
+	transition: max-height 0.3s;
+	max-height: 0;
+}
+.smenu a{
+	display: block;
+	padding: 16px 26px;
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 4px 0;
+	position: relative;
+}
+.smenu a::before{
+	/* barre à gauche qui met en avant l'élément, par défaut opacité à 0 */
+	content: '';
+	position: absolute;
+	width: 6px;
+	height: 100%;
+	background: var(--bleu);
+	left: 0;
+	top: 0;
+	transition: 0.3s;
+	opacity: 0;
+}
+.smenu a:hover::before{
+	/* quand la souris survole un élément, passe l'opacité de la barre de gauche à 1 */
+	opacity: 1;
+}
+.item:target .smenu{
+	/* lorsque l'on clique sur l'item, étendre le sous-menu associé */
+	/* faire attention si ajout d'élément dans le sous-menu à ce
+	que la hauteur max ne soit pas dépassée sinon l'overflow: hidden
+	les cacherait. Si c'est le cas, augmenter max-height */
+	max-height: 200em;
+}
+
+.list{
+	margin-top: 10%;
+	margin-left: 5%;
+	margin-right: 250px;
+	width: 30%;
+	border-radius: 8px;
+	font-family: var(--shareTech);
+	color: var(--bleu);
+	list-style: none;
+	text-decoration: none;
+	overflow: hidden;
+	display: inline-block;
+}
+.listItem{
+	border: 1px dashed var(--bleu);
+}
+.listTitle{
+	display: block;
+	padding: 8px 20px;
+	background: var(--bleu);
+	color: black;
+	position: relative;
+	text-decoration: none;
+	font-size: 20px;
+}
+.listTitle i{
+	margin-right: 10px;
+}
+.langList{
+	background: #333;
+	overflow: hidden;
+}
+.langList a{
+	padding: 16px 7.5%; /* 25% de 30% */
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 4px 0;
+	position: relative;
+}
+.langList a:hover{
+	color: var(--bleu);
+}
+
+.skillList{
+	background: #333;
+	overflow: hidden;
+}
+.skillList b{
+	display: block;
+	padding: 0 7.5%;
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 4px 0;
+	position: relative;
+}
+.skillList .nobr{
+	display: inline-block;
+	padding: 0 7.5%;
+	padding-right: 4px;;
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 4px 0;
+	position: relative;
+}
+.skillList h6{
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 4px;
+	margin-right: 10px;
+	font-weight: normal;
+	position: relative;
+}
+.bar{
+	background: #353b48;
+	display: block;
+	margin: 0 7.5%;
+	height: 2px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 0 10px #2187e7b3;
+}
+.bar span{
+	height: 2px;
+	float: left;
+	background: var(--bleu);
+}
+.csharp{
+	width: 95%; /* modifier le width de l'animation aussi en cas de changement */
+	animation: csharp 2s;
+}
+.java{
+	width: 70%; /* modifier le width de l'animation aussi en cas de changement */
+	animation: java 2s;
+}
+.python{
+	width: 72%; /* modifier le width de l'animation aussi en cas de changement */
+	animation: python 2s;
+}
+.vb{
+	width: 86%; /* modifier le width de l'animation aussi en cas de changement */
+	animation: vb 2s;
+}
+.html{
+	width: 90%; /* modifier le width de l'animation aussi en cas de changement */
+	animation: html 2s;
+}
+.js{
+	width: 85%; /* modifier le width de l'animation aussi en cas de changement */
+	animation: js 2s;
+}
+.algo{
+	width: 88%; /* modifier le width de l'animation aussi en cas de changement */
+	animation: algo 2s;
+}
+
+.barHigh span{
+	margin-top: 8px;
+	height: 2px;
+	float: left;
+	background: var(--bleu);
+}
+.barFill{
+	width: 100%; /* modifier le width de l'animation aussi en cas de changement */
+	animation: bar-fill 2s;
+}
+
+#info{
+	font-family: var(--shareTech);
+	animation: pulse-animation 2s infinite;
+	color: var(--bleu);
+	margin-top: 20px;
+	font-weight: 900;
+	font-size: 30px;
+	line-height: 140%;
+}
+#identity-results, #loadingH1, #loadingMessage2, #message{
+   margin-top: 20px;
+   font-family: var(--shareTech);
+   font-weight: 900;
+   font-size: 24px;
+   color: var(--bleu);
+   animation: pulse-animation 2s infinite;
+}
+#loadingMessage2{
+   visibility: hidden;
+}
+#about{
+	margin-right: 0px;
+	animation: about 3s;
+}
+#aboutText{
+	margin-right: 0px;
+	height: 290px;
+	overflow: auto;
+}
+#left{
+	height: 330px;
+}
+#cv{
+	display: none;
+	animation: cv 0.5s;
+}
+#barHighId{
+	display: none;
+}
