@@ -86,7 +86,6 @@
 		width: 100%;
 	}
 }
-
 @keyframes cv {
 	0%{
 		opacity: 0;
@@ -119,7 +118,7 @@ h1{
 .menu{
 	margin-top: 2%;
 	margin-left: 5%;
-	width: 79%;
+	width: 90%;
 	border-radius: 8px;
 	font-family: var(--shareTech);
 	color: var(--bleu);
@@ -200,8 +199,8 @@ h1{
 .list{
 	margin-top: 10%;
 	margin-left: 5%;
-	margin-right: 250px;
-	width: 30%;
+	margin-right: 5%;
+	width: 40%;
 	border-radius: 8px;
 	font-family: var(--shareTech);
 	color: var(--bleu);
@@ -354,16 +353,21 @@ h1{
 	animation: about 3s;
 }
 #aboutText{
-	margin-right: 0px;
-	height: 290px;
+	margin-left: 0;
+	margin-right: 0;
+	height: 18em;
 	overflow: auto;
 }
 #left{
-	height: 330px;
+	height: 22em;
+	overflow: auto;
 }
 #cv{
 	display: none;
 	animation: cv 0.5s;
+}
+#skillSection{
+	display: flex;
 }
 #barHighId{
 	display: none;

@@ -109,7 +109,7 @@ var initProgram = setTimeout(function(){
 			clearInterval(loading);
 			document.getElementById("identity-results").style.display = 'none';
 		}, timeoutTimer);
-		
+
 	setTimeout(function(){
 		document.getElementById("barHighId").style.display = 'inline';
 	}, timeoutTimer + 500);
